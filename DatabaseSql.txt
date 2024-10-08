@@ -1,0 +1,54 @@
+CREATE DATABASE Zapper 
+-- Table to store information about customers
+CREATE TABLE Customers (
+    id int IDENTITY(1,1) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table to store information about merchants
+CREATE TABLE Merchants (
+    id int IDENTITY(1,1) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone VARCHAR(15),
+    address VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table to store transaction records
+CREATE TABLE Transactions (
+    id int IDENTITY(1,1) NOT NULL,
+    customer_id INT NOT NULL,
+    merchant_id INT NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(20) NOT NULL CHECK (status IN ('Pending', 'Completed', 'Failed')),
+    FOREIGN KEY (customer_id) REFERENCES Customers(id),
+    FOREIGN KEY (merchant_id) REFERENCES Merchants(id)
+);
+
+-- Optional: Table to store product information if needed
+CREATE TABLE Products (
+    id int IDENTITY(1,1) NOT NULL,
+    merchant_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (merchant_id) REFERENCES Merchants(merchant_id)
+);
+
+-- Optional: Table to link transactions to products if needed
+CREATE TABLE TransactionItems (
+    id int IDENTITY(1,1) NOT NULL,
+    transaction_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (transaction_id) REFERENCES Transactions(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);

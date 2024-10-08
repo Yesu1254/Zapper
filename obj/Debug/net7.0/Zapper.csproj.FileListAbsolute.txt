@@ -1,0 +1,14 @@
+C:\Helper\Zapper\bin\Debug\net7.0\Zapper.exe
+C:\Helper\Zapper\bin\Debug\net7.0\Zapper.deps.json
+C:\Helper\Zapper\bin\Debug\net7.0\Zapper.runtimeconfig.json
+C:\Helper\Zapper\bin\Debug\net7.0\Zapper.dll
+C:\Helper\Zapper\bin\Debug\net7.0\Zapper.pdb
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.AssemblyInfoInputs.cache
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.AssemblyInfo.cs
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.csproj.CoreCompileInputs.cache
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.dll
+C:\Helper\Zapper\obj\Debug\net7.0\refint\Zapper.dll
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.pdb
+C:\Helper\Zapper\obj\Debug\net7.0\Zapper.genruntimeconfig.cache
+C:\Helper\Zapper\obj\Debug\net7.0\ref\Zapper.dll
